@@ -1,0 +1,102 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Suggestions
+{% endblock title %}
+
+{% block body%}
+
+<section class=" pt-md-11 bg-white" style="padding-top:20px">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-7 col-lg-6 order-md-1 aos-init aos-animate" data-aos="fade-up">
+
+        <!-- Heading -->
+        <h1 class="display-4 text-center text-md-start">
+          <span class="text-primary"><b>Anonymous</b></span> suggestions.
+        </h1>
+
+        <!-- Text -->
+        <p class="lead text-center text-md-start text-muted mb-6 mb-lg-6">
+          Anonymous employee feedback is a great way to foster candid, multi-directional communication, which
+          helps to address issues, discover valuable ideas and suggestions, improve employee engagement, and
+          build a culture of continuous improvement.
+          <br><br>
+          Help us improve organization's culture and connect for any concerns.
+
+        </p>
+
+        <!-- Buttons -->
+        <div class="text-center text-md-start pb-5">
+          <a href="/how?source=homepage_hero" class="btn btn-primary-soft lift">
+            Learn more
+          </a>
+        </div>
+
+      </div>
+      <div class="col-12 col-md-5 col-lg-6 order-md-2" style="padding:45px ;padding-bottom: 20px;">
+        <div class="col-12 col-md-12 col-lg-12 order-md-1 aos-init aos-animate mt-sm-4" data-aos="fade-right">
+          <div class="card shadow-dark-lg" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;border:none;">
+
+            <!-- Body -->
+
+            <div class="card-body">
+              <div class="text-center" style="font-size:20px;font-weight: 500;margin-bottom:0px">Suggetions
+                Box</div>
+              <form method="post" action="/feedback">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="name" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Title">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlSelect2">Category</label>
+                  <select class="form-select form-control form-control-lg" for="opt">
+                    <option><label class="form-label">Select Category</label></option>
+                    <option value="1" name="General">General</option>
+                    <option value="2" name = "Management Related ">Management Related</option>
+                    <option value="3" name = "Job Related">Job Related</option>
+                    <option value="4" name="Workplace/Culture">Workplace/Culture</option>
+                    <option value="5" name="Other">Other Issues</option>
+                  </select>
+                </div>
+                <div 5lass="mb-3">
+                  <la5el for="des" class="form-label">Details</label>
+                  <textarea type="text" class="form-control" id="des" name="des" placeholder="Details(Optional)"
+                    rows="3"></textarea>
+                </div>
+                
+                <div class="mb-3">
+                  <label for="sugg" class="form-label">Suggestions</label>
+                  <textarea type="text" class="form-control" id="sugg" name="sugg"
+                    placeholder="Please provide suggestions" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{% if messages %}
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert"
+    style="padding-top:10px ;padding-bottom:10px;">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="padding: 15px;">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+
+
+
+
+{% endblock body %}

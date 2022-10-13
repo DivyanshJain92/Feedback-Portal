@@ -1,0 +1,176 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Suggestions
+{% endblock title %}
+
+{% block body%}
+<style>
+  html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+  html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* footer {
+   
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+} */
+
+  .container-about {
+    font-family: sans-serif;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 650px;
+    padding: 20px;
+  }
+
+  .begin {
+    color: black;
+    font-size: 25px;
+    font-weight: 300;
+    padding-bottom: 20px;
+  }
+
+  .typetext {
+    justify-content: center;
+    font-size: 44px;
+    color: black;
+    font-weight: 525;
+  }
+
+  .text_1 {
+    animation: text1;
+  }
+
+  .text_2 {
+    animation: text2;
+  }
+
+  .text_1,
+  .text_2 {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    animation-duration: 20s;
+    animation-timing-function: steps(24, end);
+    animation-iteration-count: infinite;
+  }
+
+
+  .text_1::after,
+  .text_2::after {
+    content: "|";
+    position: absolute;
+    right: 0;
+    animation: caret infinite;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, end);
+  }
+
+  @keyframes text2 {
+
+    0%,
+    50%,
+    100% {
+      width: 0;
+    }
+
+    60%,
+    90% {
+      width: 18em;
+    }
+  }
+
+  @keyframes text1 {
+
+    0%,
+    50%,
+    100% {
+      width: 0;
+    }
+
+    10%,
+    40% {
+      width: 17em;
+    }
+  }
+
+  @keyframes caret {
+
+    0%,
+    100% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+
+</style>
+
+
+<div class="container-about">
+  <div class="typetext">
+    <span class="text_1">Are Your Employees Happy at Work?</span><span class="text_2">Are Your Customers Actually
+      Satisfied?</span>
+  </div>
+  <div class="begin">Track, Manage and Analyse user feedback with ease.</div>
+  <button type="button" class="btn btn-success btn-lg">Get Started</button>
+</div>
+
+<div style="font-size:30px;margin:20px;font-weight:500;text-align:center ;">How It Helps?</div>
+
+<div style="display:flex;justify-content: center;align-items: center;flex-direction: column;margin: 15px;">
+  
+<div class="card mb-3" style="max-width: 700px; display: flex;">
+  <div class="row g-0">
+    <div class="col-md-4" style="display: flex;
+    justify-content: center;" >
+      <img src="/static/img/img2.png" class="img-fluid rounded-start" alt="..." style="object-fit: contain;padding: 15px;">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="font-size:25px ;">Improves Your Business</h5>
+        <p class="card-text">What better way to get an idea for a new product or service other than from your customers? Listening and acting on the responses of your customers will give you the competitive edge you need</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-3" style="max-width: 700px;">
+  <div class="row g-0">
+    <div class="col-md-4" style="display: flex;
+    justify-content: center;" >
+      <img src="/static/img/img3.png" class="img-fluid rounded-start" alt="..." style="object-fit: contain;padding: 15px;">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style="font-size:25px ;">Enhances Customer Experience</h5>
+        <p class="card-text">What better way to get an idea for a new product or service other than from your customers? Listening and acting on the responses of your customers will give you the competitive edge you need</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+{% endblock body %}
